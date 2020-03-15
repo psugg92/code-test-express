@@ -4,7 +4,7 @@ const Member = require('./member');
 const Subscription = bookshelf.model('Subscription', {
   tableName: 'subscriptions',
   members() {
-    return this.hasMany(Member);
+    return this.belongsTo(Member,"subscription_id", "id");
   }
 });
 
